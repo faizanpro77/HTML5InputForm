@@ -76,5 +76,13 @@
                 textError.textContent = "";
             else textError.textContent = "Name is Incorrect";
         });
-    </script>
-</body>
+        const email = document.querySelector('#email');
+            const emailError = document.querySelector('.email-error');
+            email.addEventListener('input', function(){
+                let emailRegex = RegExp('^([a-z]+)([0-9])*([_+-.]{1}[a-z0-9]+)*(@)([a-z0-9]+)[.]([a-z]{2,})([.][a-z]{2}){0,1}$');
+                if(emailRegex.test(email.value))
+                emailError.textContent = "";
+                else emailError.textContent = "Email is Incorrect";
+            });
+        </script>
+    </body>
